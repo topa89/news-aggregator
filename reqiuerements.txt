@@ -1,0 +1,14 @@
+beautifulsoup4==4.6.0
+bs4==0.0.1
+certifi==2018.1.18
+chardet==3.0.4
+Django==2.0.3
+django-redis==4.9.0
+django-redis-cache==1.7.1
+idna==2.6
+npm==0.1.1
+optional-django==0.1.0
+pytz==2018.3
+redis==2.10.6
+requests==2.18.4
+urllib3==1.22

@@ -35,37 +35,24 @@
 
 <div class="container">
   <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+    {% for tiding in news %}
   <li class="nav-item">
-    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#tech" role="tab" aria-controls="home" aria-selected="true">Технологии</a>
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#tech" role="tab" aria-controls="home" aria-selected="true">{{ tiding }}</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#sport" role="tab" aria-controls="profile" aria-selected="false">Спорт</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#politics" role="tab" aria-controls="contact" aria-selected="false">Политика</a>
-  </li>
+{% endfor %}
 </ul>
 <div class="tab-content" id="news_content">
+  {% for tiding in news %}
   <div class="tab-pane fade show active" id="tech" role="tabpanel" aria-labelledby="home-tab">
     <ul class="list-group list-group-flush">
-      {% for key, value in news.items %}
-  <li class="list-group-item"><a href="{{ ev_news.url }}" >{{ value }}</a></li>
+      {% for value in tiding %}
+      {% for key, val in value.items %}
+  <li class="list-group-item"><a href="{{ value.url }}" >{{ val.title }}</a></li>
   {% endfor %}
+{% endfor %}
 </ul></div>
-  <div class="tab-pane fade" id="sport" role="tabpanel" aria-labelledby="profile-tab"><ul class="list-group list-group-flush">
-  <li class="list-group-item">Вторая ссылка</li>
-  <li class="list-group-item">Dapibus ac facilisis in</li>
-  <li class="list-group-item">Morbi leo risus</li>
-  <li class="list-group-item">Porta ac consectetur ac</li>
-  <li class="list-group-item">Vestibulum at eros</li>
-</ul></div>
-  <div class="tab-pane fade" id="politics" role="tabpanel" aria-labelledby="contact-tab"><ul class="list-group list-group-flush">
-  <li class="list-group-item">Третья ссылка</li>
-  <li class="list-group-item">Dapibus ac facilisis in</li>
-  <li class="list-group-item">Morbi leo risus</li>
-  <li class="list-group-item">Porta ac consectetur ac</li>
-  <li class="list-group-item">Vestibulum at eros</li>
-</ul></div>
+{% endfor %}
+
 </div>
 
 
